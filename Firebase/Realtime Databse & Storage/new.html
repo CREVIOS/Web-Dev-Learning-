@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-alpha1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+    <title>Talent Submission - Show your talent to the world</title>
+    <style>
+        .alert {
+            text-align: center;
+            padding: 10px;
+            background: rgb(168, 240, 177);
+            color: green;
+            margin-bottom: 10px;
+            display: none;
+        }
+        
+        .pio {
+            width: 20%;
+            margin-top: -5%;
+        }
+        
+        body {
+            background-image: url(2.svg), url(3.svg), url(6.svg);
+            background-repeat: no-repeat;
+            background-size: 25%, 25%, 25%;
+            background-position: 5% 20%, 95%, 5% 80%;
+        }
+        
+        .hii {
+            font-size: 50px;
+        }
+        
+        @media screen and (max-width: 800px) {
+            .hii {
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <br>
+
+    <div class="container">
+
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-8 col-lg-8 col-xl-6">
+                <form action="" method="POST" id="registrationform">
+                    <div class="card">
+                        <h5 class="card-header info-color white-text text-center py-4">
+                            <div class="row"><img class="pio" src='12.svg'>
+                                <div class="col text-center">
+                                    <p class="hii">Talent Submission</p>
+                                    <div class="alert">Message Sent</div>
+
+                                </div>
+                            </div>
+                        </h5>
+                        <div class="card-body px-lg-5 pt-0">
+
+                            <div class="row align-items-center">
+                                <div class="col mt-4">
+                                    <input type="text" name="name" value="" id="name" class="form-control" placeholder="Name" required />
+                                </div>
+                            </div>
+
+                            <div class="row align-items-center">
+                                <div class="col mt-4">
+                                    <input type="email" name="email" value="" id="email" class="form-control" placeholder="E-mail" required />
+                                </div>
+                            </div>
+                            <div class="row align-items-center">
+                                <div class="col mt-4">
+                                    <input type="text" name="title" value="" id="title" class="form-control" placeholder="Title" required />
+                                </div>
+                            </div>
+                            <div class="row align-items-center">
+                                <div class="col mt-4">
+                                    <p class="card-header info-color white-text text-center py-4">
+                                        Please give access to your link otherwise upload it(then type N/A in link area)
+                                </div>
+                            </div>
+                            <div class="row align-items-center">
+                                <div class="col mt-4">
+                                    <input type="text" name="link" value="" id="link" class="form-control" placeholder="Photo Link (drive or other)" required />
+                                </div>
+                            </div>
+                            <div class="row align-items-center">
+                                <div class="col mt-4">
+                                    <input type="file" value="upload" id="image" accept="/image">
+
+                                </div>
+                            </div>
+
+                            <div class="row align-items-center">
+                                <div class="form-group">
+                                    <div class="col mt-4">
+                                        <textarea class="form-control" rows="3" name="bio" id="bio" placeholder="Photo Exlanation" required></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row align-items-center mt-4">
+                                <div class="col">
+
+                                    <label for="inputState">Type:</label>
+                                    <select name="job" id="job" class="form-control" required> 
+                            
+                                <option value="Photo" id="frontend">Photo</option>
+                                <option value="Art" id="backend">Art</option>
+                                <option value="Graphics" id="fullstack">Graphics</option>
+                              
+                             
+                        </select>
+                                </div>
+
+                                <div class="col">
+                                    <label>Method:</label>
+
+                                    <select id="interest" class="form-control" required>
+                           <option value="Digital">Digital</option>
+                            <option value="sketch">Sketch</option>
+                           <option value="Painting">Painting</option>
+                          </select>
+                                </div>
+                            </div>
+
+                            <br>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="mat">
+                                <label class="form-check-label" for="mat">Subscribe to our newsletter</label>
+                            </div>
+                            <br>
+
+                            <center><button type="submit" onclick="upload()" class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" sendMessage()>Submit</button></center>
+
+                            <center>
+
+                                <a href="https://www.facebook.com/seedtobig" type="button" class="btn-floating btn-fb btn-lg">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="https://www.instagram.com/seedtobig" type="button" class="btn-floating btn-tw btn-lg">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="https://www.linkedin.com/company/seed-to-big" type="button" class="btn-floating btn-li btn-lg">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="https://www.youtube.com/channel/UC0Ki244eJR9pZpv7tpjO3sQ" type="button" class="btn-floating btn-git btn-lg">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                            </center>
+                            <hr>
+
+                            <!-- Terms of service -->
+                            <p>By clicking
+                                <em>Submit</em> you agree to our
+                                <a href="terms.html" target="_blank">terms of service</a>
+                                <footer id="footer">
+                                    <div class="container">
+                                        <div class="copyright">
+                                            &copy; Copyright <strong><span>Seed2Big</span></strong>. All Rights Reserved
+                                        </div>
+
+
+                                    </div>
+                                </footer>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <br><br>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-alpha1/js/bootstrap.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-analytics.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-database.js"></script>
+
+    <script>
+        var firebaseConfig = {
+            apiKey: "AIzaSyA8e594H4iThSdDj9Q9i8ozeDM6UUogLEA",
+            authDomain: "s2big-b14eb.firebaseapp.com",
+            databaseURL: "https://s2big-b14eb.firebaseio.com",
+            projectId: "s2big-b14eb",
+            storageBucket: "s2big-b14eb.appspot.com",
+            messagingSenderId: "342337072259",
+            appId: "1:342337072259:web:9c88476dd6089164007fb6",
+            measurementId: "G-J8XSZ53P91"
+        };
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+
+        function upload() {
+            //get your select image
+            var image = document.getElementById("image").files[0];
+            var p = document.getElementById("email").value;
+            var po = document.getElementById("title").value;
+            //now get your image name
+            var imageName = image.name;
+            var d = new Date();
+            //firebase  storage reference
+            //it is the path where yyour image will store
+            var storageRef = firebase.storage().ref('images/' + p + '+' + po + '+' + d.getHours() + '(h)' + '.' + d.getMinutes() + '(m)');
+            //upload image to selected storage reference
+
+            var uploadTask = storageRef.put(image);
+
+            uploadTask.on('state_changed', function(snapshot) {
+                //observe state change events such as progress , pause ,resume
+                //get task progress by including the number of bytes uploaded and total
+                //number of bytes
+                var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                console.log("upload is " + progress + " done");
+            }, function(error) {
+                //handle error here
+                console.log(error.message);
+            }, function() {
+                //handle successful uploads on complete
+
+                uploadTask.snapshot.ref.getDownloadURL().then(function(downlaodURL) {
+                    //get your upload image url here...
+                    console.log(downlaodURL);
+                });
+            });
+        }
+
+        let formMessage = firebase.database().ref('register');
+
+        //listen for submit event//(1)
+        document
+            .getElementById('registrationform')
+            .addEventListener('submit', formSubmit);
+
+        //Submit form(1.2)
+        function formSubmit(e) {
+            e.preventDefault();
+            // Get Values from the DOM
+            let name = document.querySelector('#name').value;
+            let email = document.querySelector('#email').value;
+            let title = document.querySelector('#title').value;
+            let link = document.querySelector('#link').value;
+            let bio = document.querySelector('#bio').value;
+            let job = document.querySelector('#job').value;
+            let interest = document.querySelector('#interest').value;
+
+
+
+            //send message values
+            sendMessage(name, email, title, link, bio, job, interest);
+
+            //Show Alert Message(5)
+            document.querySelector('.alert').style.display = 'block';
+
+            //Hide Alert Message After Seven Seconds(6)
+            setTimeout(function() {
+                document.querySelector('.alert').style.display = 'none';
+            }, 7000);
+
+            //Form Reset After Submission(7)
+            document.getElementById('registrationform').reset();
+        }
+
+        //Send Message to Firebase(4)
+
+        function sendMessage(name, email, title, link, bio, job, interest) {
+            let newFormMessage = formMessage.push();
+
+            newFormMessage.set({
+                name: name,
+                email: email,
+                title: title,
+                Link: link,
+                PhotoExplnation: bio,
+                Type: job,
+                Method: interest,
+            });
+        }
+    </script>
+</body>
+
+</html>
